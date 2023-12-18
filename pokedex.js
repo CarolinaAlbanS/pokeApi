@@ -15,12 +15,13 @@ const pokemons = async () => {
     const pokemon = poke[i];
     let url = pokemon.url;
     let response = await fetch(url);
-    let resjson = await response.json();
-    console.log(resjson);
-
-    // let parrafo = document.createElement("p");
-    // parrafo.textContent = pokemon.name;
-    // document.body.appendChild(parrafo);
+    let myPokemon = await response.json();
+    console.log(myPokemon.name);
+    let myDiv = document.createElement("div");
+    let titulo = document.createElement("h2");
+    myDiv.appendChild(titulo);
+    titulo.textContent = myPokemon.name;
+    document.body.appendChild(myDiv);
     // poke;
     // let imagen = pokemon["official-artwork"];
     // console.log(imagen);
