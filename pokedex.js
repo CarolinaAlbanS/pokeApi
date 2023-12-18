@@ -1,9 +1,6 @@
 const main = document.querySelector("main");
 const list = document.querySelector("ol");
-const pagina = "https://pokeapi.co/api/v2/pokemon/?limit=150";
-// const logo = document.querySelector(".logo");
-
-// logo.addEventListener("focus", logo);
+const pagina = "https://pokeapi.co/api/v2/pokemon/?limit=151";
 
 const pokemons = async () => {
   let response = await fetch(pagina);
@@ -16,15 +13,16 @@ const pokemons = async () => {
     let url = pokemon.url;
     let response = await fetch(url);
     let myPokemon = await response.json();
-    console.log(myPokemon.name);
     let myDiv = document.createElement("div");
     let titulo = document.createElement("h2");
     myDiv.appendChild(titulo);
     titulo.textContent = myPokemon.name;
-    document.body.appendChild(myDiv);
-    // poke;
-    // let imagen = pokemon["official-artwork"];
-    // console.log(imagen);
+    list.appendChild(myDiv);
+    let imagen = myPokemon.sprites.other["official-artwork"]["front_default"];
+    let img = document.createElement("img");
+    img.src = imagen;
+    myDiv.appendChild(img);
+    console.log(imagen);
   }
 };
 

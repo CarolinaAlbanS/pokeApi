@@ -1,0 +1,23 @@
+body {
+  background-color: black;
+  text-align: center;
+}
+
+#pokedex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+h1 {
+  color: rgb(255, 204, 1);
+}
+
+h2 {
+  color: white;
+}/*# sourceMappingURL=style.css.map */
