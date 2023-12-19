@@ -3,15 +3,18 @@ body {
   text-align: center;
 }
 
-#pokedex {
+main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
+main .input {
+  display: flex;
+  flex-wrap: wrap-reverse;
+}
 
-img {
-  -o-object-fit: cover;
-     object-fit: cover;
+.logo .img:hover {
+  filter: blur(5px);
 }
 
 h1 {

@@ -3,14 +3,20 @@ body {
   text-align: center;
 }
 
-#pokedex {
+main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  .input {
+    display: flex;
+    flex-wrap: wrap-reverse;
+  }
 }
 
-img {
-  object-fit: cover;
+.logo {
+  .img:hover {
+    filter: blur(5px);
+  }
 }
 
 // myDiv{

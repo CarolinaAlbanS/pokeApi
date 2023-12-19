@@ -29,47 +29,41 @@ const mapearPokemon = (pokesinmapear) => {
     weight: pokemon.weight,
   }));
 };
+
 const pintarPokemon = (pokes) => {
+  main.innerHTML = "";
   for (const pokemon of pokes) {
     let myDiv = document.createElement("div");
-    let h2 = document.createElement("h2");
-    let img = document.createElement("img");
-    let p = document.createElement("p");
+    myDiv.innerHTML = `
+    <h2>${pokemon.name}</h2>
+    <img src="${pokemon.img}" alt="${pokemon.name}" >
+    <h3>Abilities</h3>
+    <p>${pokemon.abilty}</p>
+    <h3>Experience</h3>
+    <p>${pokemon.experience}</p>
+    <h3>Height</h3>
+    <p>${pokemon.height}</p>
+    <h3>Weight</h3>
+    <p>${pokemon.weight}</p>`;
 
-    h2.textContent = pokemon.name;
-    img.scr = pokemon.sprites.other["official-artwork"]["front_default"];
-    //     img.setAttribute(
-    //       "src",
-    //       pokemon.sprites.other["official-artwork"]["front_default"]
-    //     );
-    //     img.setAttribute("alt", pokemon.name);
-
-    myDiv.appendChild(p);
-    myDiv.appendChild(img);
-    myDiv.appendChild(h2);
     main.appendChild(myDiv);
-
-    // myDiv.innerHTML = `
-    // <h2>${pokem.name}</h2>
-    // <img src="${
-    //   pokem.sprites.other["official-artwork"]["front_default"]
-    // }" alt="${pokem.name}" >
-    // <h3>"Abilities"</h3>
-    // <p>${pokem.abilities.map((abil) => abil.ability.name)}</p>
-    // <h3>"Experience"</h3>
-    // <p>${pokem["base_experience"]}</p>
-    // <h3>"Height"</h3>
-    // <p>${pokem.height}</p>
-    // <h3>"Weight"</h3>
-    // <p>${pokem.weight}</p>`;
-
-    //     main.appendChild(myDiv);
   }
+};
+const cogerInput = (pokemons) => {
+  const input = document.querySelector("input");
+  input.addEventListener("input", () => filtrarPokemon(pokemons, input.value));
+};
+const filtrarPokemon = (arrayPoke, filtro) => {
+  let filtroPoke = arrayPoke.filter((pokemon) =>
+    pokemon.name.toLowerCase().includes(filtro.toLowerCase())
+  );
+  pintarPokemon(filtroPoke);
 };
 
 const pokedex = async () => {
   const myPokemon = await pokemons();
   const pokemapeados = mapearPokemon(myPokemon);
   pintarPokemon(pokemapeados);
+  cogerInput(pokemapeados);
 };
 pokedex();
