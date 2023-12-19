@@ -6,3 +6,6 @@ img.aspg - lsbu;
 img["aspg-lsbu "];
 
 // en el ejercicio de sergio igual es mas optimo utilizar un maps.
+// EL pero esta puesto en kilos
+// y la altura en cenimetro, el valor que te viene es un decimetro
+// mapear mi abiliuti y hacer un join para que me devuelva cada una de las habilidades

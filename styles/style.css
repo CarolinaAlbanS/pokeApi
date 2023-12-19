@@ -20,4 +20,13 @@ h1 {
 
 h2 {
   color: white;
+  text-transform: capitalize;
+}
+
+h3 {
+  color: white;
+}
+
+p {
+  color: white;
 }/*# sourceMappingURL=style.css.map */
