@@ -7,12 +7,15 @@ const pokemons = async () => {
   let resjson = await response.json();
 
   let poke = resjson.results;
+  let arrayFiltro = [];
 
   for (let i = 0; i < poke.length; i++) {
     const pokemon = poke[i];
     let url = pokemon.url;
     let response = await fetch(url);
     let myPokemon = await response.json();
+    arrayFiltro.push(myPokemon);
+    //-----
     let myDiv = document.createElement("div");
     let titulo = document.createElement("h2");
     myDiv.appendChild(titulo);
@@ -23,7 +26,7 @@ const pokemons = async () => {
     let img = document.createElement("img");
     img.src = imagen;
     myDiv.appendChild(img);
-    //creo un contenido para todo el texto que voy a añadir
+    // //creo un contenido para todo el texto que voy a añadir
     let contenido = document.createElement("div");
     myDiv.appendChild(contenido);
     //creo mi primer titulo de habilidades y adjunt las habialidades que he mapeado
@@ -58,7 +61,37 @@ const pokemons = async () => {
     let parrafo4 = document.createElement("p");
     parrafo4.textContent = peso;
     contenido.appendChild(parrafo4);
+    // Vamos a crear un input para filtrar
   }
+  cogerInput(arrayFiltro);
+  pintarImg(arrayFiltro);
+};
+
+const pintarImg = (arrayFiltro) => {
+  for (const imgPokemon of arrayFiltro) {
+    let myDivImg = document.createElement("div");
+    myDivImg.textContent = "calabaza";
+    document.appendChild(myDivImg);
+    // let imagen = arrayFiltro.sprites;
+    // console.log(imagen);
+    // let img = document.createElement("img");
+    // img.src = imagen;
+  }
+};
+
+const cogerInput = (arrayFiltro) => {
+  const input = document.querySelector("input");
+  input.addEventListener("input", () =>
+    filterPokemon(arrayFiltro, input.value)
+  );
+};
+
+// creo la funcion que llamo dentro de mi funcion de cogerInput
+const filterPokemon = (arrayFiltrar, filtrar) => {
+  let pokemonFiltrados = arrayFiltrar.filter((pokemons) =>
+    pokemons.name.toLowerCase().includes(filtrar.toLowerCase())
+  );
+  console.log(pokemonFiltrados);
 };
 
 pokemons();
