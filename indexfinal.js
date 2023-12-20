@@ -111,6 +111,7 @@ const tiposFiltrado = (pokemons, filtro) => {
 
 const pokedex = async () => {
   const myPokemon = await pokemons();
+  cargado.classList.add("hidden");
   const pokemapeados = mapearPokemon(myPokemon);
   pintarPokemon(pokemapeados);
   cogerInput(pokemapeados);
