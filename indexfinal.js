@@ -2,23 +2,23 @@ const main = document.querySelector("main");
 const list = document.querySelector("ol");
 const pagina = "https://pokeapi.co/api/v2/pokemon/?limit=151";
 const types = [
-  "normal",
-  "fire",
-  "water",
-  "electric",
-  "grass",
-  "ice",
-  "fighting",
-  "poison",
+  "Normal",
+  "Fire",
+  "Water",
+  "Electric",
+  "Grass",
+  "Ice",
+  "Fighting",
+  "Poison",
   "ground",
-  "flying",
-  "psychic",
-  "bug",
-  "rock",
-  "ghost",
-  "dragon",
-  "steel",
-  "fairy",
+  "Flying",
+  "Psychic",
+  "Bug",
+  "Rock",
+  "Ghost",
+  "Dragon",
+  "Steel",
+  "Fairy",
 ];
 
 const pokemons = async () => {
@@ -62,16 +62,11 @@ const pintarPokemon = (pokes) => {
     <h2>${pokemon.name}</h2>
     <img src="${pokemon.img}" alt="${pokemon.name}" >`;
     myDiv2.innerHTML = `
-    <h3>Abilities</h3>
-    <p>${pokemon.abilty}</p>
-    <h3>Experience</h3>
-    <p>${pokemon.experience}</p>
-    <h3>Height</h3>
-    <p>${pokemon.height} cm</p>
-    <h3>Weight</h3>
-    <p>${pokemon.weight} kg</p>
-    <h3>Types</h3>
-    <p>${pokemon.types}</p>`;
+    <h3>Abilities:</h3> <p>${pokemon.abilty}</p>
+    <h3>Experience:</h3> <p>${pokemon.experience}</p>
+    <h3>Height:</h3> <p>${pokemon.height} cm</p>
+    <h3>Weight:</h3> <p>${pokemon.weight} kg</p>
+    <h3>Types:</h3> <p>${pokemon.types}</p>`;
     myDiv.appendChild(myDiv2);
     main.appendChild(myDiv);
   }

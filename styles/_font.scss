@@ -1,20 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost&family=Public+Sans&family=Roboto:wght@300;500&family=Sora:wght@300&display=swap");
+$font_font-family: "Sora", sans-serif;
+
+$color_principal: (29, 31, 32);
+
 h1 {
   color: rgb(255, 204, 1);
 }
 h2 {
-  color: rgb(29, 31, 32);
+  color: $color_principal;
   text-transform: capitalize;
+  font-family: $font_font-family;
 }
 h3 {
-  color: rgb(29, 31, 32);
+  color: $color_principal;
+  font-family: $font_font-family;
 }
 
 p {
-  color: rgb(29, 31, 32);
+  color: $color_principal;
+  font-family: $font_font-family;
 }
 
 .divButton {
   button {
+    font-family: $font_font-family;
     font-size: 100%;
     color: rgb(29, 31, 32);
     font-weight: 600%;

@@ -15,9 +15,8 @@ main {
 
 .logo {
 }
-
 .card {
-  max-width: 25%;
+  max-width: 20%;
   max-height: 25%;
   background: linear-gradient(#87cefa, #ffa089, #ffff99, #bffcc6);
   background-size: 100%;
@@ -29,7 +28,7 @@ main {
   position: relative;
   overflow: hidden;
   display: inline-block;
-  margin: 20px 10px;
+  margin: 20px 60px;
 
   // Animation ready
   will-change: transform;
@@ -143,19 +142,13 @@ main {
   }
 }
 
-.myDiv2 {
+.cardies {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: stretch;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1%;
+  margin: 1%;
 }
-
-// .card {
-//   max-width: 25%;
-//   margin: 1%;
-//   padding: 2%;
-//   border-radius: 5%;
-//   background: linear-gradient(-45deg, #87cefa, #ffa089, #ffff99, #bffcc6);
-//   align-items: center;
-//   cursor: pointer;
-//   img {
-//     max-width: 100%;
-//   }
-// }
