@@ -14,11 +14,34 @@ main {
 }
 
 .logo {
-  .img:hover {
-    filter: blur(5px);
+  img {
   }
 }
 
+.card {
+  max-width: 25%;
+  max-height: 15%;
+  margin: 1%;
+  padding: 2%;
+  border-radius: 5%;
+  background: linear-gradient(-45deg, #f6e6c2, #ffaacf, #b9f3e4, #fdfdbd);
+  animation: gradient 15s ease infinite;
+  align-items: center;
+  img {
+    max-width: 100%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 // myDiv{
 //   img{
 //     /* Shine */

@@ -13,10 +13,31 @@ main .input {
   flex-wrap: wrap-reverse;
 }
 
-.logo .img:hover {
-  filter: blur(5px);
+.card {
+  max-width: 25%;
+  max-height: 15%;
+  margin: 1%;
+  padding: 2%;
+  border-radius: 5%;
+  background: linear-gradient(-45deg, #f6e6c2, #ffaacf, #b9f3e4, #fdfdbd);
+  animation: gradient 15s ease infinite;
+  align-items: center;
+}
+.card img {
+  max-width: 100%;
 }
 
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 h1 {
   color: rgb(255, 204, 1);
 }
@@ -32,4 +53,19 @@ h3 {
 
 p {
   color: white;
+}
+
+header {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+header input {
+  max-width: 80%;
+  margin-left: 9%;
+}
+
+button {
+  background-color: grey;
 }/*# sourceMappingURL=style.css.map */

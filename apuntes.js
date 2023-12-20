@@ -12,3 +12,4 @@ img["aspg-lsbu "];
 // classList.toggle(.hove)
 // lo que hemos hecho con sergio es que se le a ñadido un evento a la imagen para que cada vez que pase el raton por encima se tenga encuenta y se añada la clase de .hover que hemos definido en scss
 // crear un array que contenga cada uno de los objetos que pase al iterar mi bucle
+// seleccionar el div. classLis.add
