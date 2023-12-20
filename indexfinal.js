@@ -55,10 +55,13 @@ const pintarPokemon = (pokes) => {
   main.innerHTML = "";
   for (const pokemon of pokes) {
     let myDiv = document.createElement("div");
+    let myDiv2 = document.createElement("div");
     myDiv.classList.add("card");
+    myDiv2.classList.add("cardies");
     myDiv.innerHTML = `
     <h2>${pokemon.name}</h2>
-    <img src="${pokemon.img}" alt="${pokemon.name}" >
+    <img src="${pokemon.img}" alt="${pokemon.name}" >`;
+    myDiv2.innerHTML = `
     <h3>Abilities</h3>
     <p>${pokemon.abilty}</p>
     <h3>Experience</h3>
@@ -69,7 +72,7 @@ const pintarPokemon = (pokes) => {
     <p>${pokemon.weight} kg</p>
     <h3>Types</h3>
     <p>${pokemon.types}</p>`;
-
+    myDiv.appendChild(myDiv2);
     main.appendChild(myDiv);
   }
 };
