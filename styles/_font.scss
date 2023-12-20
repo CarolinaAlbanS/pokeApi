@@ -2,13 +2,21 @@ h1 {
   color: rgb(255, 204, 1);
 }
 h2 {
-  color: white;
+  color: rgb(29, 31, 32);
   text-transform: capitalize;
 }
 h3 {
-  color: white;
+  color: rgb(29, 31, 32);
 }
 
 p {
-  color: white;
+  color: rgb(29, 31, 32);
+}
+
+.divButton {
+  button {
+    font-size: 100%;
+    color: rgb(29, 31, 32);
+    font-weight: 600%;
+  }
 }

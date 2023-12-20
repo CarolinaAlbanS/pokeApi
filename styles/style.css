@@ -1,5 +1,5 @@
 body {
-  background-color: black;
+  background-color: rgb(29, 31, 32);
   text-align: center;
 }
 
@@ -14,49 +14,44 @@ main .input {
 }
 
 .card {
-  max-width: 25%;
-  max-height: 15%;
+  max-width: 100px;
   margin: 1%;
   padding: 2%;
   border-radius: 5%;
-  background: linear-gradient(-45deg, #f6e6c2, #ffaacf, #b9f3e4, #fdfdbd);
-  animation: gradient 15s ease infinite;
+  background: linear-gradient(-45deg, #87cefa, #ffa089, #ffff99, #bffcc6);
   align-items: center;
+  cursor: pointer;
 }
 .card img {
   max-width: 100%;
 }
 
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
 h1 {
   color: rgb(255, 204, 1);
 }
 
 h2 {
-  color: white;
+  color: rgb(29, 31, 32);
   text-transform: capitalize;
 }
 
 h3 {
-  color: white;
+  color: rgb(29, 31, 32);
 }
 
 p {
-  color: white;
+  color: rgb(29, 31, 32);
+}
+
+.divButton button {
+  font-size: 100%;
+  color: rgb(29, 31, 32);
+  font-weight: 600%;
 }
 
 header {
   max-width: 100%;
+  margin-bottom: 8%;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -64,8 +59,29 @@ header {
 header input {
   max-width: 80%;
   margin-left: 9%;
+  height: 25px;
+  background-color: transparent;
+  border-color: white;
+  border-bottom-color: white;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  color: rgb(255, 255, 255);
 }
 
-button {
-  background-color: grey;
+.divButton {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+.divButton button {
+  max-width: 100%;
+  margin: 1%;
+  padding: 1%;
+  border-radius: 23%;
+  text-align: center;
+  border: solid 5px;
+  box-shadow: 1px 1px 9px 3px rgba(255, 160, 137, 0.4);
 }/*# sourceMappingURL=style.css.map */

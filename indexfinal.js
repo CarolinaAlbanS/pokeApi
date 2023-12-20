@@ -8,7 +8,7 @@ const types = [
   "electric",
   "grass",
   "ice",
-  "fichting",
+  "fighting",
   "poison",
   "ground",
   "flying",
@@ -17,10 +17,8 @@ const types = [
   "rock",
   "ghost",
   "dragon",
-  "dark",
   "steel",
   "fairy",
-  "stellar",
 ];
 
 const pokemons = async () => {
@@ -46,8 +44,8 @@ const mapearPokemon = (pokesinmapear) => {
     img: pokemon.sprites.other["official-artwork"]["front_default"],
     abilty: pokemon.abilities.map((abil) => abil.ability.name).join(", "),
     experience: pokemon["base_experience"],
-    height: pokemon.height,
-    weight: pokemon.weight,
+    height: pokemon.height * 10,
+    weight: pokemon.weight / 10,
     types: pokemon.types.map((type) => type.type.name).join(", "),
   }));
   console.log(mapearPokemon);
@@ -66,9 +64,9 @@ const pintarPokemon = (pokes) => {
     <h3>Experience</h3>
     <p>${pokemon.experience}</p>
     <h3>Height</h3>
-    <p>${pokemon.height}</p>
+    <p>${pokemon.height} cm</p>
     <h3>Weight</h3>
-    <p>${pokemon.weight}</p>
+    <p>${pokemon.weight} kg</p>
     <h3>Types</h3>
     <p>${pokemon.types}</p>`;
 
@@ -86,18 +84,25 @@ const filtrarPokemon = (arrayPoke, filtro) => {
   pintarPokemon(filtroPoke);
 };
 
-const filtrarFuego = (pokemons) => {
+const filtrarTipos = (pokemons) => {
   let header = document.querySelector(".header");
-  const buttonFuego = document.createElement("button");
-  buttonFuego.textContent = "Fire";
-  header.appendChild(buttonFuego);
-  buttonFuego.addEventListener("click", () => fuegoFiltrado(pokemons, "Fire"));
+  const divButton = document.createElement("div");
+  header.appendChild(divButton);
+  divButton.classList.add("divButton");
+  for (let i = 0; i < types.length; i++) {
+    const tipo = types[i];
+    const buttonTypes = document.createElement("button");
+    buttonTypes.classList.add("button");
+    buttonTypes.textContent = tipo;
+    divButton.appendChild(buttonTypes);
+    buttonTypes.addEventListener("click", () => tiposFiltrado(pokemons, tipo));
+  }
 };
-const fuegoFiltrado = (arrayFuego, filtro) => {
-  let fuegof = arrayFuego.filter((pokemon) =>
+const tiposFiltrado = (pokemons, filtro) => {
+  let tipos = pokemons.filter((pokemon) =>
     pokemon.types.toLowerCase().includes(filtro.toLowerCase())
   );
-  pintarPokemon(fuegof);
+  pintarPokemon(tipos);
 };
 
 const pokedex = async () => {
@@ -105,6 +110,6 @@ const pokedex = async () => {
   const pokemapeados = mapearPokemon(myPokemon);
   pintarPokemon(pokemapeados);
   cogerInput(pokemapeados);
-  filtrarFuego(pokemapeados);
+  filtrarTipos(pokemapeados);
 };
 pokedex();
