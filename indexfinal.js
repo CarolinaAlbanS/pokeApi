@@ -53,9 +53,13 @@ const mapearPokemon = (pokesinmapear) => {
 
 const pintarPokemon = (pokes) => {
   main.innerHTML = "";
+  let conteiner = document.createElement("div");
+  conteiner.classList.add("conteiner");
   for (const pokemon of pokes) {
+    let figure = document.createElement("figure");
     let myDiv = document.createElement("div");
     let myDiv2 = document.createElement("div");
+    figure.classList.add("figure");
     myDiv.classList.add("card");
     myDiv2.classList.add("cardies");
     myDiv.innerHTML = `
@@ -67,9 +71,11 @@ const pintarPokemon = (pokes) => {
     <h3>Height:</h3> <p>${pokemon.height} cm</p>
     <h3>Weight:</h3> <p>${pokemon.weight} kg</p>
     <h3>Types:</h3> <p>${pokemon.types}</p>`;
-    myDiv.appendChild(myDiv2);
-    main.appendChild(myDiv);
+    figure.appendChild(myDiv);
+    figure.appendChild(myDiv2);
+    conteiner.appendChild(figure);
   }
+  main.appendChild(conteiner);
 };
 const cogerInput = (pokemons) => {
   const input = document.querySelector("input");
