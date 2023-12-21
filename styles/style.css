@@ -55,6 +55,13 @@ main .input {
   opacity: 0;
   visibility: hidden;
   text-align: center;
+  align-items: center;
+}
+.cardies h3 {
+  margin-top: 6%;
+}
+.cardies p {
+  margin-top: 6%;
 }
 
 h1 {
@@ -127,6 +134,9 @@ header input {
   display: inline-block;
   width: 80px;
   height: 80px;
+}
+.lds-dual-ring.hidden {
+  display: none;
 }
 
 .lds-dual-ring:after {
