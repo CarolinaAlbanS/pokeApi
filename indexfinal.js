@@ -109,9 +109,15 @@ const tiposFiltrado = (pokemons, filtro) => {
   pintarPokemon(tipos);
 };
 
+window.onload = function () {
+  let contenedor = document.querySelector("lds-dual-ring hidden");
+  contenedor.style.visibility = "hidden";
+  contenedor.style.opacity = "0";
+};
+
 const pokedex = async () => {
   const myPokemon = await pokemons();
-  cargado.classList.add("hidden");
+  // cargado.classList.add("hidden");
   const pokemapeados = mapearPokemon(myPokemon);
   pintarPokemon(pokemapeados);
   cogerInput(pokemapeados);

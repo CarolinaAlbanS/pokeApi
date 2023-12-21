@@ -51,8 +51,8 @@ header {
   height: 64px;
   margin: 8px;
   border-radius: 50%;
-  border: 6px solid #fff;
-  border-color: #fff transparent #fff transparent;
+  border: 6px solid #ffe600;
+  border-color: #ffe600 transparent #ffe600 transparent;
   animation: lds-dual-ring 1.2s linear infinite;
 }
 @keyframes lds-dual-ring {
@@ -62,4 +62,7 @@ header {
   100% {
     transform: rotate(360deg);
   }
+}
+.logo {
+  margin-top: 2%;
 }
