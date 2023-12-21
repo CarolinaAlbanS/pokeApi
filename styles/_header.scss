@@ -67,5 +67,16 @@ header {
   }
 }
 .logo {
-  margin-top: 2%;
+  margin-top: 5%;
+}
+
+.logo img {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.logo:hover {
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
 }
